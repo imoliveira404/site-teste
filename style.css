@@ -199,11 +199,13 @@ a {
     border-radius: 16px;
     cursor: pointer;
     transition: var(--transition);
-    position: relative;
+    position: absolute;
+    top: -1.5rem; /* Shifting up significantly */
+    left: 50%;
+    transform: translateX(-50%);
     user-select: none;
-    margin-top: -0.5rem;
-    margin-bottom: 1.5rem;
     backdrop-filter: blur(10px);
+    z-index: 10;
 }
 
 .hero-ip-box:hover {
