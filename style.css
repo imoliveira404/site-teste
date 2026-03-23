@@ -1024,8 +1024,17 @@ a {
         display: none;
     }
     
-    .nav-links, .search-bar {
-        display: none;
+    .search-bar {
+        display: none; /* Keep it hidden for now if UI is too cramped, or we can make it a smaller icon */
+    }
+    
+    .nav-actions {
+        gap: 0.75rem;
+    }
+
+    .btn-support {
+        padding: 0.6rem;
+        font-size: 1rem;
     }
     
     .hero-buttons {
@@ -1041,6 +1050,25 @@ a {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        margin-bottom: 1rem; /* Reduced gap */
+    }
+    
+    .hero-ip-box {
+        margin-top: 1rem; /* More space on mobile to avoid overlap */
+        margin-bottom: 2rem;
+        transform: scale(0.9);
+    }
+
+    .hero-title {
+        font-size: 2.25rem !important; /* Smaller title on mobile */
+        line-height: 1.2;
+    }
+
+    .support-modal {
+        width: 90%;
+        padding: 1.5rem;
+        max-height: 90vh;
+        overflow-y: auto;
     }
     
     .card-content {
