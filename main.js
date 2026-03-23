@@ -76,5 +76,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Copy IP functionality
+    const serverIpBox = document.querySelector('.nav-server');
+    if (serverIpBox) {
+        serverIpBox.addEventListener('click', () => {
+            const ip = "jogar.auroramc.com.br";
+            navigator.clipboard.writeText(ip).then(() => {
+                serverIpBox.classList.add('copied');
+                
+                // Add mini animation or sound effects if desired
+                setTimeout(() => {
+                    serverIpBox.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                console.error('Erro ao copiar IP: ', err);
+            });
+        });
+    }
+
     console.log("Loja AuroraMC carregada com sucesso!");
 });
