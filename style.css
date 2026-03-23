@@ -139,6 +139,10 @@ a {
     align-items: center;
 }
 
+.menu-toggle {
+    display: none;
+}
+
 .nav-brand {
     display: flex;
     align-items: center;
@@ -617,9 +621,9 @@ a {
     padding: 5rem 2rem;
 }
 
-.categories-grid {
+.categories-grid, .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     margin-top: 2rem;
 }
