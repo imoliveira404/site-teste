@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuroraMC - Loja Oficial</title>
+    <meta name="description"
+        content="A loja oficial da AuroraMC. Compre VIPs, itens, kits e muito mais para melhorar sua experiência no servidor.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Favicon padrão -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- PNGs para navegadores modernos -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+
+    <!-- Android / Chrome -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
+
+    <!-- Apple (iPhone / iPad) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- Manifest (PWA) -->
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Cor da barra no mobile -->
+    <meta name="theme-color" content="#ffffff">
+
+
+
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="container nav-content">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 1.5rem;">
+                    <div class="brand-logo"><img src="images/logo.png" alt="AuroraMC Logo"
+                            style="width: 100%; height: 100%; object-fit: contain; border-radius: 8px;"></div>
+                    <h1 class="brand-name">AuroraMC <i class="fa-solid fa-circle-check brand-badge"></i></h1>
+                </a>
+
+                <div class="nav-links">
+                    <a href="https://discord.gg/link" target="_blank" class="nav-link"><i
+                            class="fa-brands fa-discord"></i> Discord</a>
+                    <a href="termos.html" class="nav-link"><i class="fa-solid fa-file-contract"></i> Termos</a>
+                </div>
+            </div>
+
+            <div class="nav-actions">
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Buscar produto">
+                </div>
+                <button class="btn btn-primary cart-btn">
+                    <i class="fa-solid fa-cart-shopping"></i> Carrinho
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-overlay"></div>
+
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <span class="badge badge-primary"><i class="fa-solid fa-store"></i> Loja Oficial AuroraMC</span>
+                    <h2 class="hero-title">A loja oficial<br>da AuroraMC!</h2>
+                    <p class="hero-description">Compre VIPs, Unbans, Homes e muito mais!</p>
+
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary"><i class="fa-solid fa-boxes-stacked"></i> Conferir
+                            Ofertas</button>
+                        <button class="btn btn-outline"><i class="fa-solid fa-circle-info"></i> Informações da
+                            Loja</button>
+                    </div>
+                </div>
+
+                <div class="hero-logo-large">
+                    <div class="server-logo">
+                        <img src="images/render.png" alt="AuroraMC Render"
+                            style="max-width: 400px; width: 100%; height: auto;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-indicator" title="Rolar para baixo">
+                <i class="fa-solid fa-arrow-down"></i>
+            </div>
+        </section>
+
+        <section class="categories container">
+            <div class="section-header">
+                <span class="badge badge-dark"><i class="fa-solid fa-list-ul"></i> Categorias Populares</span>
+            </div>
+
+            <div class="categories-grid">
+                <!-- Card 1 -->
+                <div class="category-card">
+                    <div class="card-image-box" style="background: linear-gradient(135deg, #a8ff78 0%, #78ffd6 100%);">
+                        <i class="fa-solid fa-gem card-icon" style="color: #000; font-size: 3rem;"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title"><i class="fa-regular fa-gem" style="color: #4da6ff;"></i> VIPs
+                            Exclusivos!</h3>
+                        <p class="card-desc">Veja os itens disponíveis desta categoria.</p>
+                        <a href="categoria-vips.html" class="btn btn-primary btn-sm">Ver Produtos <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="category-card">
+                    <div class="card-image-box" style="background: linear-gradient(135deg, #c471f5 0%, #fa71cd 100%);">
+                        <i class="fa-solid fa-box-open card-icon" style="color: #fff; font-size: 3rem;"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Kits Exclusivos</h3>
+                        <p class="card-desc">Veja os itens disponíveis desta categoria.</p>
+                        <a href="categoria-kits.html" class="btn btn-primary btn-sm">Ver Produtos <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="category-card">
+                    <div class="card-image-box" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                        <i class="fa-solid fa-ban card-icon" style="color: #fff; font-size: 3rem;"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Punições</h3>
+                        <p class="card-desc">Veja os itens disponíveis desta categoria.</p>
+                        <a href="categoria-punicoes.html" class="btn btn-primary btn-sm">Ver Produtos <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="category-card">
+                    <div class="card-image-box" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                        <i class="fa-regular fa-gem card-icon" style="color: #fff; font-size: 3rem;"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title"><i class="fa-solid fa-gem" style="color: #38ef7d;"></i> Gemas</h3>
+                        <p class="card-desc">Veja os itens disponíveis desta categoria.</p>
+                        <a href="categoria-gemas.html" class="btn btn-primary btn-sm">Ver Produtos <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="category-card">
+                    <div class="card-image-box" style="background: linear-gradient(135deg, #fceabb 0%, #f8b500 100%);">
+                        <i class="fa-solid fa-box card-icon" style="color: #12141d; font-size: 3rem;"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title"><i class="fa-solid fa-gift" style="color: #f8b500;"></i> Caixas</h3>
+                        <p class="card-desc">Veja os itens disponíveis desta categoria.</p>
+                        <a href="categoria-caixas.html" class="btn btn-primary btn-sm">Ver Produtos <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="category-card">
+                    <div class="card-image-box" style="background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);">
+                        <i class="fa-solid fa-star card-icon" style="color: #fff; font-size: 3rem;"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title"><i class="fa-solid fa-plus" style="color: #74ebd5;"></i> Extras</h3>
+                        <p class="card-desc">Veja os itens disponíveis desta categoria.</p>
+                        <a href="categoria-extras.html" class="btn btn-primary btn-sm">Ver Produtos <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features container">
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-regular fa-paper-plane"></i>
+                    </div>
+                    <h3 class="feature-title">Envio imediato</h3>
+                    <p class="feature-desc">Receba pelo pacote que comprou em poucos segundos após a confirmação do
+                        pagamento.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-headphones"></i>
+                    </div>
+                    <h3 class="feature-title">Suporte</h3>
+                    <p class="feature-desc">Em caso de dúvidas, entre em contato com o nosso suporte via Discord ou pelo
+                        email suporte@auroramc.net.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="feature-title">Compra segura</h3>
+                    <p class="feature-desc">Seus dados são criptografados de ponta-a-ponta e processados pelo método de
+                        pagamento escolhido.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq container">
+            <div class="faq-wrapper">
+                <div class="faq-header">
+                    <span class="badge badge-primary"><i class="fa-solid fa-circle-question"></i> Central de
+                        Informações</span>
+                    <h2 class="faq-title">Informações Importantes</h2>
+                    <p class="faq-desc">Aqui você encontra respostas para as dúvidas mais comuns sobre os nossos
+                        serviços do servidor.</p>
+                </div>
+
+                <div class="faq-grid">
+                    <!-- FAQ 1 -->
+                    <div class="faq-card">
+                        <div class="faq-question">
+                            <div class="faq-icon-title">
+                                <div class="faq-icon"><i class="fa-solid fa-cart-shopping" style="color: #43d047;"></i>
+                                </div>
+                                <h3>Como posso fazer um pedido?</h3>
+                            </div>
+                            <i class="fa-solid fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Para fazer um pedido, basta selecionar os produtos desejados e seguir para o checkout.
+                                Aceitamos diversas formas de pagamento.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="faq-card">
+                        <div class="faq-question">
+                            <div class="faq-icon-title">
+                                <div class="faq-icon"><i class="fa-regular fa-clock" style="color: #43d047;"></i></div>
+                                <h3>Qual o prazo de entrega</h3>
+                            </div>
+                            <i class="fa-solid fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>A entrega é feita de forma imediata após a confirmação do pagamento.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="faq-card">
+                        <div class="faq-question">
+                            <div class="faq-icon-title">
+                                <div class="faq-icon"><i class="fa-solid fa-headset" style="color: #43d047;"></i></div>
+                                <h3>Como funciona o suporte?</h3>
+                            </div>
+                            <i class="fa-solid fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Nosso suporte está disponível através do <a href="https://discord.gg/link"
+                                    target="_blank" rel="noopener noreferrer">Discord</a>.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="faq-card">
+                        <div class="faq-question">
+                            <div class="faq-icon-title">
+                                <div class="faq-icon"><i class="fa-solid fa-infinity" style="color: #43d047;"></i></div>
+                                <h3>Produtos "Eternos"</h3>
+                            </div>
+                            <i class="fa-solid fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Permanecem ativos enquanto o servidor estiver online. Apenas perde em reset total do
+                                servidor.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 5 -->
+                    <div class="faq-card">
+                        <div class="faq-question">
+                            <div class="faq-icon-title">
+                                <div class="faq-icon"><i class="fa-solid fa-crown" style="color: #43d047;"></i></div>
+                                <h3>Benefícios dos VIPs</h3>
+                            </div>
+                            <i class="fa-solid fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Veja os beneficios de cada VIP <a href="#">clicando aqui</a>.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 6 -->
+                    <div class="faq-card">
+                        <div class="faq-question">
+                            <div class="faq-icon-title">
+                                <div class="faq-icon"><i class="fa-solid fa-ticket" style="color: #43d047;"></i></div>
+                                <h3>Não recebi nada, e agora?</h3>
+                            </div>
+                            <i class="fa-solid fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Fique tranquilo, entre em contato com a gente pelo <a href="https://discord.gg/link"
+                                    target="_blank" rel="noopener noreferrer">Discord</a> e abra um ticket em #suporte.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-top">
+                <div class="footer-brand-info">
+                    <div class="footer-brand">
+                        <img src="images/logo.png" alt="AuroraMC Logo" class="footer-logo">
+                        <span class="footer-name">AuroraMC</span>
+                    </div>
+                    <p class="footer-desc">Loja do Servidor de Minecraft AuroraMC. Adquira Vips, Unbans e mais!</p>
+                </div>
+
+                <div class="footer-links-group">
+                    <h4 class="footer-title">Acesse:</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Página Inicial</a></li>
+                        <li><a href="index.html">Nossa Loja</a></li>
+                        <li><a href="termos.html">Termos de Serviço</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">Copyright &copy; 2026 AuroraMC. Todos os direitos reservados.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

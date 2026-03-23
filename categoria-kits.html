@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuroraMC - Kits</title>
+    <meta name="description" content="Adquira Kits Exclusivos no AuroraMC.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Layout Header da Categoria */
+        .category-header { display: flex; justify-content: space-between; align-items: center; padding: 2rem 0; margin-top: 1rem; }
+        .category-header-left { display: flex; align-items: center; gap: 1.5rem; }
+        .back-btn { background: var(--bg-surface); border: 1px solid var(--border-color); width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 12px; color: var(--text-main); font-size: 1.2rem; transition: var(--transition); }
+        .back-btn:hover { background: var(--bg-surface-light); border-color: rgba(255,255,255,0.2); transform: translateX(-3px); }
+        .category-title { font-size: 1.8rem; display: flex; align-items: center; gap: 0.75rem; color: var(--text-main); letter-spacing: -0.5px; }
+        .category-subtitle { color: var(--text-muted); font-size: 0.95rem; margin-top: 0.2rem; display: block; }
+        .header-badge { background: var(--bg-surface); border-radius: 20px; padding: 0.5rem 1.25rem; font-weight: 500; color: var(--text-muted); font-size: 0.85rem; border: 1px solid var(--border-color); display: flex; align-items: center; gap: 0.5rem; }
+        .header-badge i { color: var(--primary); }
+
+        /* Products Grid */
+        .products-section { padding-bottom: 5rem; }
+        .products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 1rem; }
+        .product-card { background-color: var(--bg-surface); border: 1px solid transparent; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; transition: var(--transition); }
+        .product-card:hover { border-color: rgba(255, 255, 255, 0.1); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); }
+
+        /* Product Banner */
+        .product-banner { width: 100%; height: 280px; background-color: var(--bg-search); border-bottom: 3px solid var(--border-color); position: relative; display: flex; align-items: flex-end; justify-content: center; overflow: hidden; padding-top: 3rem; }
+        .product-banner::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.05) 0, rgba(255,255,255,0.05) 15px, transparent 15px, transparent 30px); z-index: 1; }
+        .banner-rank-title { position: absolute; top: 1rem; left: 0; width: 100%; text-align: center; font-size: 2.2rem; font-weight: 900; text-transform: uppercase; color: white; text-shadow: 0 4px 10px rgba(0,0,0,0.5), 2px 2px 0px rgba(0,0,0,0.8); letter-spacing: 2px; z-index: 3; }
+        .banner-bottom-logo { position: absolute; bottom: 0.5rem; left: 0; width: 100%; text-align: center; font-size: 0.7rem; font-weight: 800; color: white; text-transform: uppercase; letter-spacing: 2px; z-index: 3; text-shadow: 0 2px 5px rgba(0,0,0,0.8); }
+        .banner-image { width: 90%; height: 100%; object-fit: contain; object-position: bottom; position: relative; z-index: 2; transition: transform 0.4s ease; filter: drop-shadow(0 -10px 20px rgba(0,0,0,0.3)); }
+        .product-card:hover .banner-image { transform: scale(1.05); }
+
+        /* Cores exclusivas para cada Produto (Kits: Pinks/Purples) */
+        .product-card.k1 .product-banner { background-color: #ba68c8; border-bottom-color: #e1bee7; }
+        .product-card.k2 .product-banner { background-color: #9c27b0; border-bottom-color: #ce93d8; }
+        .product-card.k3 .product-banner { background-color: #ec407a; border-bottom-color: #f8bbd0; }
+        .product-card.k4 .product-banner { background-color: #e91e63; border-bottom-color: #f48fb1; }
+
+        /* Product Info */
+        .product-info { padding: 1.25rem; display: flex; flex-direction: column; flex-grow: 1; }
+        .product-name { font-size: 1.05rem; color: var(--text-main); font-weight: 700; margin-bottom: 1rem; }
+        .product-price-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem; }
+        .product-price { color: var(--primary); font-size: 1.2rem; font-weight: 700; }
+        .price-icon { color: var(--primary); background: rgba(67, 208, 71, 0.1); width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border-radius: 6px; font-size: 0.9rem; }
+        .product-pix { color: var(--text-muted); font-size: 0.8rem; margin-bottom: 1.5rem; }
+        .product-btn { width: 100%; margin-top: auto; border-radius: 6px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.85rem; background-color: var(--primary); color: white; border: none; cursor: pointer; transition: var(--transition); }
+        .product-btn:hover { background-color: var(--primary-hover); transform: translateY(-2px); }
+        .product-btn i { font-size: 1rem; }
+
+        /* Responsividade */
+        @media (max-width: 1200px) { .products-grid { grid-template-columns: repeat(3, 1fr); } .category-header { padding: 2rem 2rem 1rem 2rem; } .products-grid { padding: 0 2rem 5rem 2rem; } }
+        @media (max-width: 900px) { .products-grid { grid-template-columns: repeat(2, 1fr); } .category-header { flex-direction: column; align-items: flex-start; gap: 1rem; } }
+        @media (max-width: 600px) { .products-grid { grid-template-columns: 1fr; } }
+    </style>
+    <link rel="icon" type="image/png" href="images/logo.png">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container nav-content">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 1.5rem;">
+                    <div class="brand-logo"><img src="images/logo.png" alt="AuroraMC Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: 8px;"></div>
+                    <h1 class="brand-name">AuroraMC <i class="fa-solid fa-circle-check brand-badge"></i></h1>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="https://discord.gg/link" target="_blank" class="nav-link"><i class="fa-brands fa-discord"></i> Discord</a>
+                <a href="termos.html" class="nav-link"><i class="fa-solid fa-file-contract"></i> Termos</a>
+            </div>
+            <div class="nav-actions">
+                <div class="search-bar"><i class="fa-solid fa-magnifying-glass"></i><input type="text" placeholder="Buscar produto"></div>
+                <button class="btn btn-primary cart-btn"><i class="fa-solid fa-cart-shopping"></i> Carrinho</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Header da Categoria -->
+        <div class="category-header">
+            <div class="category-header-left">
+                <a href="index.html" class="back-btn"><i class="fa-solid fa-chevron-left"></i></a>
+                <div class="category-title-wrap">
+                    <h2 class="category-title"><i class="fa-solid fa-box-open" style="color: #c471f5;"></i> Kits Exclusivos</h2>
+                    <span class="category-subtitle">Itens iniciais e avançados para você focar no gameplay.</span>
+                </div>
+            </div>
+            <div class="category-header-right">
+                <div class="header-badge">
+                    <i class="fa-solid fa-sparkles"></i> Várias opções para você escolher
+                </div>
+            </div>
+        </div>
+
+        <section class="products-section">
+            <div class="products-grid">
+                
+                <!-- Kit 1 -->
+                <div class="product-card k1">
+                    <div class="product-banner">
+                        <div class="banner-rank-title">BÁSICO</div>
+                        <img src="images/render.png" alt="Kit Básico" class="banner-image">
+                        <div class="banner-bottom-logo">- AURORAMC -</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Kit de Sobrevivência</h3>
+                        <div class="product-price-row">
+                            <span class="product-price">R$ 5,00</span>
+                            <div class="price-icon"><i class="fa-solid fa-layer-group"></i></div>
+                        </div>
+                        <span class="product-pix">À vista no Pix</span>
+                        <button class="product-btn"><i class="fa-solid fa-cart-shopping"></i> Comprar agora</button>
+                    </div>
+                </div>
+
+                <!-- Kit 2 -->
+                <div class="product-card k2">
+                    <div class="product-banner">
+                        <div class="banner-rank-title">EXPLORADOR</div>
+                        <img src="images/render.png" alt="Kit Explorador" class="banner-image">
+                        <div class="banner-bottom-logo">- AURORAMC -</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Kit Explorador</h3>
+                        <div class="product-price-row">
+                            <span class="product-price">R$ 15,00</span>
+                            <div class="price-icon"><i class="fa-solid fa-layer-group"></i></div>
+                        </div>
+                        <span class="product-pix">À vista no Pix</span>
+                        <button class="product-btn"><i class="fa-solid fa-cart-shopping"></i> Comprar agora</button>
+                    </div>
+                </div>
+
+                <!-- Kit 3 -->
+                <div class="product-card k3">
+                    <div class="product-banner">
+                        <div class="banner-rank-title">COMBATENTE</div>
+                        <img src="images/render.png" alt="Kit Combatente" class="banner-image">
+                        <div class="banner-bottom-logo">- AURORAMC -</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Kit de Combate</h3>
+                        <div class="product-price-row">
+                            <span class="product-price">R$ 30,00</span>
+                            <div class="price-icon"><i class="fa-solid fa-layer-group"></i></div>
+                        </div>
+                        <span class="product-pix">À vista no Pix</span>
+                        <button class="product-btn"><i class="fa-solid fa-cart-shopping"></i> Comprar agora</button>
+                    </div>
+                </div>
+
+                <!-- Kit 4 -->
+                <div class="product-card k4">
+                    <div class="product-banner">
+                        <div class="banner-rank-title">MESTRE</div>
+                        <img src="images/render.png" alt="Kit Mestre" class="banner-image">
+                        <div class="banner-bottom-logo">- AURORAMC -</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Kit Mestre Completo</h3>
+                        <div class="product-price-row">
+                            <span class="product-price">R$ 50,00</span>
+                            <div class="price-icon"><i class="fa-solid fa-layer-group"></i></div>
+                        </div>
+                        <span class="product-pix">À vista no Pix</span>
+                        <button class="product-btn"><i class="fa-solid fa-cart-shopping"></i> Comprar agora</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-top">
+                <div class="footer-brand-info">
+                    <div class="footer-brand">
+                        <img src="images/logo.png" alt="AuroraMC Logo" class="footer-logo">
+                        <span class="footer-name">AuroraMC</span>
+                    </div>
+                    <p class="footer-desc">Loja do Servidor de Minecraft AuroraMC. Adquira Vips, Unbans e mais!</p>
+                </div>
+                <div class="footer-links-group">
+                    <h4 class="footer-title">Acesse:</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Página Inicial</a></li>
+                        <li><a href="index.html">Nossa Loja</a></li>
+                        <li><a href="termos.html">Termos de Serviço</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">Copyright &copy; 2026 AuroraMC. Todos os direitos reservados.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
