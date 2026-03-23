@@ -1140,15 +1140,15 @@ a {
         margin-bottom: 0.5rem;
     }
 
-    .product-btn {
+    .product-btn, .category-card .btn {
         width: 100% !important;
-        padding: 0.75rem 0.5rem !important;
-        font-size: 0.85rem !important;
+        padding: 0.6rem 0.4rem !important;
+        font-size: 0.8rem !important;
         display: flex !important;
         flex-direction: row !important;
         justify-content: center !important;
-        gap: 0.4rem !important;
-        white-space: nowrap;
+        gap: 0.3rem !important;
+        white-space: nowrap !important;
     }
 
     /* Mobile Menu Styles */
