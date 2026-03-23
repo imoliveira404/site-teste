@@ -94,5 +94,135 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Support Form & Modal Logic
+    const initSupportForm = () => {
+        // Create modal structure
+        const modalHtml = `
+            <div class="modal-overlay" id="support-modal-overlay">
+                <div class="support-modal">
+                    <button class="modal-close" id="close-support">&times;</button>
+                    <div class="modal-header">
+                        <h2>Central de Suporte</h2>
+                        <p>Preencha os dados abaixo para falar conosco.</p>
+                    </div>
+                    <form class="support-form" id="support-form">
+                        <div class="form-group">
+                            <label for="sup-name">Seu Nome</label>
+                            <input type="text" id="sup-name" placeholder="Ex: João Silva" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="sup-email">Seu E-mail</label>
+                            <input type="email" id="sup-email" placeholder="email@exemplo.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="sup-nick">Nick no Jogo</label>
+                            <input type="text" id="sup-nick" placeholder="Ex: Player123" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="sup-reason">Motivo do Contato</label>
+                            <select id="sup-reason" required>
+                                <option value="" disabled selected>Selecione um motivo...</option>
+                                <option value="Problemas com Compras">Problemas com Compras</option>
+                                <option value="Dúvidas Gerais">Dúvidas Gerais</option>
+                                <option value="Reportar Bug">Reportar Bug</option>
+                                <option value="Apelação de Punição">Apelação de Punição</option>
+                                <option value="Outros">Outros</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="sup-message">Mensagem</label>
+                            <textarea id="sup-message" rows="4" placeholder="Como podemos te ajudar?" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit" id="submit-support">
+                            <i class="fa-solid fa-paper-plane"></i> Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        `;
+
+        document.body.insertAdjacentHTML('beforeend', modalHtml);
+
+        const overlay = document.getElementById('support-modal-overlay');
+        const openBtn = document.getElementById('open-support');
+        const closeBtn = document.getElementById('close-support');
+        const form = document.getElementById('support-form');
+        const submitBtn = document.getElementById('submit-support');
+
+        if (!openBtn) return;
+
+        openBtn.addEventListener('click', () => {
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        const closeModal = () => {
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        };
+
+        closeBtn.addEventListener('click', closeModal);
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) closeModal();
+        });
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('sup-name').value;
+            const email = document.getElementById('sup-email').value;
+            const nick = document.getElementById('sup-nick').value;
+            const reason = document.getElementById('sup-reason').value;
+            const message = document.getElementById('sup-message').value;
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';
+
+            const webhookUrl = 'https://discord.com/api/webhooks/1485713362720391270/w9re4Cg2uP4d1WeTREZZpfFiBeBhoiB9LjlxcEULPsHKXu0KGD1UTbQCV4eN9Uy3fHHr';
+
+            const payload = {
+                username: "AuroraMC Suporte",
+                avatar_url: "https://auroramc.net/images/logo.png",
+                embeds: [{
+                    title: "🎫 Novo Ticket de Suporte",
+                    color: 4443463, // var(--primary) equivalent
+                    fields: [
+                        { name: "👤 Nome", value: name, inline: true },
+                        { name: "📧 E-mail", value: email, inline: true },
+                        { name: "🎮 Nick", value: nick, inline: true },
+                        { name: "📋 Motivo", value: reason, inline: false },
+                        { name: "💬 Mensagem", value: message, inline: false }
+                    ],
+                    footer: { text: "AuroraMC Store - Suporte via Webhook" },
+                    timestamp: new Date().toISOString()
+                }]
+            };
+
+            try {
+                const response = await fetch(webhookUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (response.ok) {
+                    submitBtn.innerHTML = '<i class="fa-solid fa-check"></i> Enviado com Sucesso!';
+                    submitBtn.style.backgroundColor = '#43d047';
+                    form.reset();
+                    setTimeout(closeModal, 2000);
+                } else {
+                    throw new Error('Erro ao enviar');
+                }
+            } catch (error) {
+                console.error('Erro no webhook:', error);
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Erro ao enviar. Tente novamente.';
+                submitBtn.style.backgroundColor = '#ef5350';
+            }
+        });
+    };
+
+    initSupportForm();
+
     console.log("Loja AuroraMC carregada com sucesso!");
 });
