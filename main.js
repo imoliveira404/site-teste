@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="mobile-menu-bg" id="mobile-menu-bg"></div>
             <div class="mobile-menu-overlay" id="mobile-menu-overlay">
                 <a href="index.html" class="mobile-menu-link"><i class="fa-solid fa-house"></i> Início</a>
-                <a href="categoria-vips.html" class="mobile-menu-link">VIPs</a>
+                <a href="categoria-vips.html" class="mobile-menu-link"><i class="fa-solid fa-crown"></i> VIPs</a>
                 <a href="termos.html" class="mobile-menu-link"><i class="fa-solid fa-file-contract"></i> Termos</a>
                 <div class="mobile-menu-link" id="mobile-support-btn" style="cursor: pointer;"><i class="fa-solid fa-headset"></i> Suporte</div>
             </div>
