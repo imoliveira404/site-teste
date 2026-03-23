@@ -199,10 +199,9 @@ a {
     border-radius: 16px;
     cursor: pointer;
     transition: var(--transition);
-    position: absolute;
-    top: -1.5rem; /* Shifting up significantly */
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
+    margin-top: -1rem;
+    margin-bottom: 1.5rem;
     user-select: none;
     backdrop-filter: blur(10px);
     z-index: 10;
