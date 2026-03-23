@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Copy IP functionality
-    const serverIpBox = document.querySelector('.nav-server');
+    const serverIpBox = document.querySelector('.hero-ip-box');
     if (serverIpBox) {
         serverIpBox.addEventListener('click', () => {
             const ip = "jogar.auroramc.com.br";

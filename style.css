@@ -184,81 +184,83 @@ a {
     color: var(--text-main);
 }
 
-.nav-server {
-    display: flex;
+.nav-link:hover {
+    color: var(--text-main);
+}
+
+/* Hero IP Box */
+.hero-ip-box {
+    display: inline-flex;
     align-items: center;
-    gap: 0.75rem;
-    background-color: rgba(255, 255, 255, 0.03);
+    gap: 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--border-color);
-    padding: 0.5rem 1rem;
-    border-radius: 12px;
+    padding: 0.75rem 1.5rem;
+    border-radius: 16px;
     cursor: pointer;
     transition: var(--transition);
     position: relative;
     user-select: none;
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(10px);
 }
 
-.nav-server:hover {
-    background-color: rgba(255, 255, 255, 0.06);
-    border-color: rgba(255, 255, 255, 0.1);
+.hero-ip-box:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-.nav-server i:first-child {
-    color: var(--primary);
-    font-size: 1.1rem;
-}
-
-.server-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.server-ip {
-    color: var(--text-main);
-    font-size: 0.85rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-
-.server-status {
-    color: var(--text-muted);
-    font-size: 0.7rem;
-    font-weight: 500;
+.ip-icon {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(67, 208, 71, 0.1);
+    border-radius: 12px;
     display: flex;
     align-items: center;
-    gap: 0.4rem;
+    justify-content: center;
+    color: var(--primary);
+    font-size: 1.25rem;
 }
 
-.server-status i {
-    color: #43d047;
-    font-size: 0.5rem;
-    animation: pulse 2s infinite;
+.ip-details {
+    display: flex;
+    flex-direction: column;
 }
 
-@keyframes pulse {
-    0% { opacity: 0.5; }
-    50% { opacity: 1; }
-    100% { opacity: 0.5; }
+.ip-address {
+    color: var(--text-main);
+    font-size: 1.1rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: 0.5px;
 }
 
-.copy-badge {
+.ip-status {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.ip-copy-badge {
     position: absolute;
-    top: -30px;
+    top: -40px;
     left: 50%;
     transform: translateX(-50%) translateY(10px);
     background-color: var(--primary);
     color: white;
-    padding: 0.3rem 0.6rem;
-    border-radius: 6px;
-    font-size: 0.7rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
     font-weight: 700;
     opacity: 0;
     pointer-events: none;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 15px rgba(67, 208, 71, 0.4);
 }
 
-.nav-server.copied .copy-badge {
+.hero-ip-box.copied .ip-copy-badge {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
 }
