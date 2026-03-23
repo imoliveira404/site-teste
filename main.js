@@ -222,7 +222,47 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
+    // Mobile Menu Logic
+    const initMobileMenu = () => {
+        const menuHtml = `
+            <div class="mobile-menu-bg" id="mobile-menu-bg"></div>
+            <div class="mobile-menu-overlay" id="mobile-menu-overlay">
+                <a href="index.html" class="mobile-menu-link"><i class="fa-solid fa-house"></i> Início</a>
+                <a href="categoria-vips.html" class="mobile-menu-link"><i class="fa-solid fa-crown"></i> VIPs</a>
+                <a href="termos.html" class="mobile-menu-link"><i class="fa-solid fa-file-contract"></i> Termos</a>
+                <div class="mobile-menu-link" id="mobile-support-btn" style="cursor: pointer;"><i class="fa-solid fa-headset"></i> Suporte</div>
+            </div>
+        `;
+
+        document.body.insertAdjacentHTML('beforeend', menuHtml);
+
+        const bg = document.getElementById('mobile-menu-bg');
+        const overlay = document.getElementById('mobile-menu-overlay');
+        const toggles = document.querySelectorAll('.menu-toggle');
+        const supportBtnInMenu = document.getElementById('mobile-support-btn');
+
+        const toggleMenu = () => {
+            bg.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = bg.classList.contains('active') ? 'hidden' : '';
+        };
+
+        toggles.forEach(btn => btn.addEventListener('click', toggleMenu));
+        bg.addEventListener('click', toggleMenu);
+
+        // Close and open support from menu
+        if (supportBtnInMenu) {
+            supportBtnInMenu.addEventListener('click', () => {
+                toggleMenu();
+                setTimeout(() => {
+                    document.getElementById('open-support').click();
+                }, 300);
+            });
+        }
+    };
+
     initSupportForm();
+    initMobileMenu();
 
     console.log("Loja AuroraMC carregada com sucesso!");
 });
