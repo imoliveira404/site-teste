@@ -51,11 +51,13 @@
         .banner-image { width: 90%; height: 100%; object-fit: contain; object-position: bottom; position: relative; z-index: 2; transition: transform 0.4s ease; filter: drop-shadow(0 -10px 20px rgba(0,0,0,0.3)); }
         .product-card:hover .banner-image { transform: scale(1.05); }
 
-        /* Cores exclusivas para cada Produto (Caixas: gold/yellows) */
-        .product-card.c1 .product-banner { background-color: #fbc02d; border-bottom-color: #fff59d; }
-        .product-card.c2 .product-banner { background-color: #f9a825; border-bottom-color: #ffeb3b; }
-        .product-card.c3 .product-banner { background-color: #f57f17; border-bottom-color: #ffd600; }
-        .product-card.c4 .product-banner { background-color: #ff6f00; border-bottom-color: #ffcc80; }
+        /* Cores exclusivas para cada Produto */
+        .product-card.c1 .product-banner { background-color: #7bc05b; border-bottom-color: #a8ff78; }
+        .product-card.c2 .product-banner { background-color: #29b6f6; border-bottom-color: #4dc9ff; }
+        .product-card.c3 .product-banner { background-color: #fbc02d; border-bottom-color: #fff59d; }
+        .product-card.c4 .product-banner { background-color: #f44336; border-bottom-color: #ef9a9a; }
+        .product-card.c5 .product-banner { background-color: #ff9800; border-bottom-color: #ffcc80; }
+        .product-card.c6 .product-banner { background-color: #9c27b0; border-bottom-color: #ce93d8; }
 
         /* Product Info */
         .product-info { padding: 1.25rem; display: flex; flex-direction: column; flex-grow: 1; }
@@ -126,75 +128,105 @@
         <section class="products-section">
             <div class="products-grid">
                 
-                <!-- Produto 1 -->
                 <div class="product-card c1">
                     <div class="product-banner">
-                        <div class="banner-rank-title">X3 CAIXAS</div>
-                        <img src="images/render.png" alt="Caixa Comum" class="banner-image">
+                        <div class="banner-rank-title">VIP</div>
+                        <img src="images/render.png" alt="Chave VIP" class="banner-image">
                         <div class="banner-bottom-logo">- AURORAMC -</div>
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">3x Caixas Misteriosas</h3>
+                        <h3 class="product-name">5x Chave Vip</h3>
                         <div class="product-price-row">
-                            <span class="product-price">R$ 10,00</span>
-                            <div class="price-icon"><i class="fa-solid fa-box-open"></i></div>
+                            <span class="product-price">-</span>
+                            <div class="price-icon"><i class="fa-solid fa-key"></i></div>
                         </div>
                         <span class="product-pix">À vista no Pix</span>
-                        <button class="product-btn"><i class="fa-solid fa-cart-shopping"></i> Comprar agora</button>
+                        <a href="https://pay.cakto.com.br/jdyh8v9_822231" target="_blank" class="product-btn" style="text-decoration: none;"><i class="fa-solid fa-cart-shopping"></i> Comprar agora</a>
                     </div>
                 </div>
 
-                <!-- Produto 2 -->
                 <div class="product-card c2">
                     <div class="product-banner">
-                        <div class="banner-rank-title">X5 CAIXAS</div>
-                        <img src="images/render.png" alt="Caixas" class="banner-image">
+                        <div class="banner-rank-title">MVP</div>
+                        <img src="images/render.png" alt="Chave MVP" class="banner-image">
                         <div class="banner-bottom-logo">- AURORAMC -</div>
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">5x Caixas Misteriosas</h3>
+                        <h3 class="product-name">4x Chave Mvp</h3>
                         <div class="product-price-row">
-                            <span class="product-price">R$ 15,00</span>
-                            <div class="price-icon"><i class="fa-solid fa-box-open"></i></div>
+                            <span class="product-price">-</span>
+                            <div class="price-icon"><i class="fa-solid fa-key"></i></div>
                         </div>
                         <span class="product-pix">À vista no Pix</span>
-                        <button class="product-btn"><i class="fa-solid fa-cart-shopping"></i> Comprar agora</button>
+                        <a href="https://pay.cakto.com.br/mvr64m6" target="_blank" class="product-btn" style="text-decoration: none;"><i class="fa-solid fa-cart-shopping"></i> Comprar agora</a>
                     </div>
                 </div>
 
-                <!-- Produto 3 -->
                 <div class="product-card c3">
                     <div class="product-banner">
-                        <div class="banner-rank-title">X10 CAIXAS</div>
-                        <img src="images/render.png" alt="Caixas Epicas" class="banner-image">
+                        <div class="banner-rank-title">PRO</div>
+                        <img src="images/render.png" alt="Chave PRO" class="banner-image">
                         <div class="banner-bottom-logo">- AURORAMC -</div>
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">10x Caixas Misteriosas</h3>
+                        <h3 class="product-name">3x Chave Pro</h3>
                         <div class="product-price-row">
-                            <span class="product-price">R$ 25,00</span>
-                            <div class="price-icon"><i class="fa-solid fa-box-open"></i></div>
+                            <span class="product-price">-</span>
+                            <div class="price-icon"><i class="fa-solid fa-key"></i></div>
                         </div>
                         <span class="product-pix">À vista no Pix</span>
-                        <button class="product-btn"><i class="fa-solid fa-cart-shopping"></i> Comprar agora</button>
+                        <a href="https://pay.cakto.com.br/3c7e9wf" target="_blank" class="product-btn" style="text-decoration: none;"><i class="fa-solid fa-cart-shopping"></i> Comprar agora</a>
                     </div>
                 </div>
 
-                <!-- Produto 4 -->
                 <div class="product-card c4">
                     <div class="product-banner">
-                        <div class="banner-rank-title">X20 CAIXAS</div>
-                        <img src="images/render.png" alt="Caixas Lendárias" class="banner-image">
+                        <div class="banner-rank-title">ELITE</div>
+                        <img src="images/render.png" alt="Chave ELITE" class="banner-image">
                         <div class="banner-bottom-logo">- AURORAMC -</div>
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">20x Caixas Misteriosas</h3>
+                        <h3 class="product-name">2x Chave Elite</h3>
                         <div class="product-price-row">
-                            <span class="product-price">R$ 45,00</span>
-                            <div class="price-icon"><i class="fa-solid fa-box-open"></i></div>
+                            <span class="product-price">-</span>
+                            <div class="price-icon"><i class="fa-solid fa-key"></i></div>
                         </div>
                         <span class="product-pix">À vista no Pix</span>
-                        <button class="product-btn"><i class="fa-solid fa-cart-shopping"></i> Comprar agora</button>
+                        <a href="https://pay.cakto.com.br/snn7458" target="_blank" class="product-btn" style="text-decoration: none;"><i class="fa-solid fa-cart-shopping"></i> Comprar agora</a>
+                    </div>
+                </div>
+
+                <div class="product-card c5">
+                    <div class="product-banner">
+                        <div class="banner-rank-title">LENDÁRIA</div>
+                        <img src="images/render.png" alt="Chave LENDÁRIA" class="banner-image">
+                        <div class="banner-bottom-logo">- AURORAMC -</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">2x Chave Lendária</h3>
+                        <div class="product-price-row">
+                            <span class="product-price">-</span>
+                            <div class="price-icon"><i class="fa-solid fa-key"></i></div>
+                        </div>
+                        <span class="product-pix">À vista no Pix</span>
+                        <a href="https://pay.cakto.com.br/37xpqhx" target="_blank" class="product-btn" style="text-decoration: none;"><i class="fa-solid fa-cart-shopping"></i> Comprar agora</a>
+                    </div>
+                </div>
+
+                <div class="product-card c6">
+                    <div class="product-banner">
+                        <div class="banner-rank-title">SUPREMA</div>
+                        <img src="images/render.png" alt="Chave SUPREMA" class="banner-image">
+                        <div class="banner-bottom-logo">- AURORAMC -</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">1x Chave Suprema</h3>
+                        <div class="product-price-row">
+                            <span class="product-price">-</span>
+                            <div class="price-icon"><i class="fa-solid fa-key"></i></div>
+                        </div>
+                        <span class="product-pix">À vista no Pix</span>
+                        <a href="https://pay.cakto.com.br/arrjc7b" target="_blank" class="product-btn" style="text-decoration: none;"><i class="fa-solid fa-cart-shopping"></i> Comprar agora</a>
                     </div>
                 </div>
 

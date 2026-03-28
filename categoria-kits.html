@@ -51,11 +51,13 @@
         .banner-image { width: 90%; height: 100%; object-fit: contain; object-position: bottom; position: relative; z-index: 2; transition: transform 0.4s ease; filter: drop-shadow(0 -10px 20px rgba(0,0,0,0.3)); }
         .product-card:hover .banner-image { transform: scale(1.05); }
 
-        /* Cores exclusivas para cada Produto (Kits: Pinks/Purples) */
-        .product-card.k1 .product-banner { background-color: #ba68c8; border-bottom-color: #e1bee7; }
-        .product-card.k2 .product-banner { background-color: #9c27b0; border-bottom-color: #ce93d8; }
-        .product-card.k3 .product-banner { background-color: #ec407a; border-bottom-color: #f8bbd0; }
-        .product-card.k4 .product-banner { background-color: #e91e63; border-bottom-color: #f48fb1; }
+        /* Cores exclusivas para cada Produto */
+        .product-card.k1 .product-banner { background-color: #7bc05b; border-bottom-color: #a8ff78; }
+        .product-card.k2 .product-banner { background-color: #29b6f6; border-bottom-color: #4dc9ff; }
+        .product-card.k3 .product-banner { background-color: #fbc02d; border-bottom-color: #fff59d; }
+        .product-card.k4 .product-banner { background-color: #f44336; border-bottom-color: #ef9a9a; }
+        .product-card.k5 .product-banner { background-color: #ff9800; border-bottom-color: #ffcc80; }
+        .product-card.k6 .product-banner { background-color: #9c27b0; border-bottom-color: #ce93d8; }
 
         /* Product Info */
         .product-info { padding: 1.25rem; display: flex; flex-direction: column; flex-grow: 1; }
@@ -126,75 +128,105 @@
         <section class="products-section">
             <div class="products-grid">
                 
-                <!-- Kit 1 -->
                 <div class="product-card k1">
                     <div class="product-banner">
-                        <div class="banner-rank-title">BÁSICO</div>
-                        <img src="images/render.png" alt="Kit Básico" class="banner-image">
+                        <div class="banner-rank-title">VIP</div>
+                        <img src="images/render.png" alt="Kit VIP" class="banner-image">
                         <div class="banner-bottom-logo">- AURORAMC -</div>
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Kit de Sobrevivência</h3>
+                        <h3 class="product-name">Kit Vip</h3>
                         <div class="product-price-row">
-                            <span class="product-price">R$ 5,00</span>
+                            <span class="product-price">-</span>
                             <div class="price-icon"><i class="fa-solid fa-layer-group"></i></div>
                         </div>
                         <span class="product-pix">À vista no Pix</span>
-                        <button class="product-btn"><i class="fa-solid fa-cart-shopping"></i> Comprar agora</button>
+                        <a href="https://pay.cakto.com.br/3ay5h7c_822637" target="_blank" class="product-btn" style="text-decoration: none;"><i class="fa-solid fa-cart-shopping"></i> Comprar agora</a>
                     </div>
                 </div>
 
-                <!-- Kit 2 -->
                 <div class="product-card k2">
                     <div class="product-banner">
-                        <div class="banner-rank-title">EXPLORADOR</div>
-                        <img src="images/render.png" alt="Kit Explorador" class="banner-image">
+                        <div class="banner-rank-title">MVP</div>
+                        <img src="images/render.png" alt="Kit MVP" class="banner-image">
                         <div class="banner-bottom-logo">- AURORAMC -</div>
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Kit Explorador</h3>
+                        <h3 class="product-name">Kit Mvp</h3>
                         <div class="product-price-row">
-                            <span class="product-price">R$ 15,00</span>
+                            <span class="product-price">-</span>
                             <div class="price-icon"><i class="fa-solid fa-layer-group"></i></div>
                         </div>
                         <span class="product-pix">À vista no Pix</span>
-                        <button class="product-btn"><i class="fa-solid fa-cart-shopping"></i> Comprar agora</button>
+                        <a href="https://pay.cakto.com.br/6th782p" target="_blank" class="product-btn" style="text-decoration: none;"><i class="fa-solid fa-cart-shopping"></i> Comprar agora</a>
                     </div>
                 </div>
 
-                <!-- Kit 3 -->
                 <div class="product-card k3">
                     <div class="product-banner">
-                        <div class="banner-rank-title">COMBATENTE</div>
-                        <img src="images/render.png" alt="Kit Combatente" class="banner-image">
+                        <div class="banner-rank-title">PRO</div>
+                        <img src="images/render.png" alt="Kit PRO" class="banner-image">
                         <div class="banner-bottom-logo">- AURORAMC -</div>
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Kit de Combate</h3>
+                        <h3 class="product-name">Kit Pro</h3>
                         <div class="product-price-row">
-                            <span class="product-price">R$ 30,00</span>
+                            <span class="product-price">-</span>
                             <div class="price-icon"><i class="fa-solid fa-layer-group"></i></div>
                         </div>
                         <span class="product-pix">À vista no Pix</span>
-                        <button class="product-btn"><i class="fa-solid fa-cart-shopping"></i> Comprar agora</button>
+                        <a href="https://pay.cakto.com.br/3ddve27" target="_blank" class="product-btn" style="text-decoration: none;"><i class="fa-solid fa-cart-shopping"></i> Comprar agora</a>
                     </div>
                 </div>
 
-                <!-- Kit 4 -->
                 <div class="product-card k4">
                     <div class="product-banner">
-                        <div class="banner-rank-title">MESTRE</div>
-                        <img src="images/render.png" alt="Kit Mestre" class="banner-image">
+                        <div class="banner-rank-title">ELITE</div>
+                        <img src="images/render.png" alt="Kit ELITE" class="banner-image">
                         <div class="banner-bottom-logo">- AURORAMC -</div>
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name">Kit Mestre Completo</h3>
+                        <h3 class="product-name">Kit Elite</h3>
                         <div class="product-price-row">
-                            <span class="product-price">R$ 50,00</span>
+                            <span class="product-price">-</span>
                             <div class="price-icon"><i class="fa-solid fa-layer-group"></i></div>
                         </div>
                         <span class="product-pix">À vista no Pix</span>
-                        <button class="product-btn"><i class="fa-solid fa-cart-shopping"></i> Comprar agora</button>
+                        <a href="https://pay.cakto.com.br/3aax9bp" target="_blank" class="product-btn" style="text-decoration: none;"><i class="fa-solid fa-cart-shopping"></i> Comprar agora</a>
+                    </div>
+                </div>
+
+                <div class="product-card k5">
+                    <div class="product-banner">
+                        <div class="banner-rank-title">LENDÁRIO</div>
+                        <img src="images/render.png" alt="Kit LENDÁRIO" class="banner-image">
+                        <div class="banner-bottom-logo">- AURORAMC -</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Kit Lendario</h3>
+                        <div class="product-price-row">
+                            <span class="product-price">-</span>
+                            <div class="price-icon"><i class="fa-solid fa-layer-group"></i></div>
+                        </div>
+                        <span class="product-pix">À vista no Pix</span>
+                        <a href="https://pay.cakto.com.br/sfucb4e" target="_blank" class="product-btn" style="text-decoration: none;"><i class="fa-solid fa-cart-shopping"></i> Comprar agora</a>
+                    </div>
+                </div>
+
+                <div class="product-card k6">
+                    <div class="product-banner">
+                        <div class="banner-rank-title">SUPREMO</div>
+                        <img src="images/render.png" alt="Kit SUPREMO" class="banner-image">
+                        <div class="banner-bottom-logo">- AURORAMC -</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Kit Supremo</h3>
+                        <div class="product-price-row">
+                            <span class="product-price">-</span>
+                            <div class="price-icon"><i class="fa-solid fa-layer-group"></i></div>
+                        </div>
+                        <span class="product-pix">À vista no Pix</span>
+                        <a href="https://pay.cakto.com.br/w74dwqv" target="_blank" class="product-btn" style="text-decoration: none;"><i class="fa-solid fa-cart-shopping"></i> Comprar agora</a>
                     </div>
                 </div>
 
