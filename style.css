@@ -1000,6 +1000,14 @@ a {
     transform: translateY(-2px);
 }
 
+/* Esconder menu mobile no Desktop */
+@media (min-width: 769px) {
+    .mobile-menu-overlay,
+    .mobile-menu-bg {
+        display: none !important;
+    }
+}
+
 /* Responsive */
 @media (max-width: 1200px) {
     .faq-grid {
